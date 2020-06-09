@@ -21,7 +21,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - run: docker build --tag my-image:v1 .
+    - run: docker build --tag planitnerd-development:v1 .
     - name: Push to ECR
       id: ecr
       uses: jwalton/gh-ecr-push@v1
@@ -29,4 +29,4 @@ jobs:
         access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         region: us-east-1
-        image: my-image:v1
+        image: planitnerd-development:v1
